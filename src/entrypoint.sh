@@ -1,12 +1,7 @@
-INFO=`bump2version --dry-run --list ${INPUT_PART} | rs 0 1`
+eval `bump2version --dry-run --list ${INPUT_PART}`
 
-CURRENT_VERSION=`echo ${INFO} | grep current_version | sed -r s,"^.*=",,`
-NEXT_VERSION=`echo ${INFO} | grep new_version | sed -r s,"^.*=",,`
+echo "current: ${current_version}"
+echo "next: ${new_version}"
 
-echo "info:"
-echo $INFO
-echo "current: ${CURRENT_VERSION}"
-echo "next: ${NEXT_VERSION}"
-
-echo "::set-output name=currentVersion::v${CURRENT_VERSION}"
-echo "::set-output name=nextVersion::v${NEXT_VERSION}"
+echo "::set-output name=currentVersion::v${current_version}"
+echo "::set-output name=nextVersion::v${new_version}"
