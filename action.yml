@@ -8,6 +8,8 @@ inputs:
     description: 'Version part to upgrade'
     required: true
 outputs:
+  currentVersion:
+    description: 'the current version'
   nextVersion:
     description: 'the next version'
 runs:

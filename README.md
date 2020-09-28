@@ -26,7 +26,8 @@ jobs:
 ### Inputs
 
 * `part` - 
+* 
 ### Outputs
 
-
+* `currentVersion` - 
 * `nextVersion` - 
