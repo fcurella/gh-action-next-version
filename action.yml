@@ -1,0 +1,15 @@
+name: "Get next version"
+description: "Outputs the next version number"
+branding:
+  icon: 'clock'
+  color: 'orange'
+inputs:
+  part:
+    description: 'Version part to upgrade'
+    required: true
+outputs:
+  nextVersion:
+    description: 'the next version'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
