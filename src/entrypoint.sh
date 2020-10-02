@@ -1,4 +1,11 @@
-eval `bump2version --dry-run --list ${INPUT_PART}`
+set -e
+set -x
+
+whoami
+ls -l
+bump2version --dry-run --list ${INPUT_PART}
+eval `bump2version --dry-run --list ${INPUT_PART} | grep current_version`
+eval `bump2version --dry-run --list ${INPUT_PART} | grep new_version`
 
 echo "current: ${current_version}"
 echo "next: ${new_version}"

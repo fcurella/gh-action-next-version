@@ -4,5 +4,5 @@ WORKDIR /app
 
 COPY ./src /app
 RUN pip install -r requirements.txt
-
+ENV PYTHONUNBUFFERED=1
 ENTRYPOINT ["bash", "/app/entrypoint.sh"]
