@@ -1,9 +1,7 @@
 set -e
-set -x
 
-whoami
-ls -l
 bump2version --dry-run --list ${INPUT_PART}
+
 eval `bump2version --dry-run --list ${INPUT_PART} | grep current_version`
 eval `bump2version --dry-run --list ${INPUT_PART} | grep new_version`
 
